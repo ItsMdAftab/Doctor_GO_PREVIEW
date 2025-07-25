@@ -2,8 +2,6 @@ import React, { useState,useRef,useEffect } from "react";
 import "./App.css";
 import chabotgif from './assets/gif/chatbotgif.gif';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LanguageSelector from "./LanguageSelector";
-import { useTranslation } from 'react-i18next';
 
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
@@ -18,13 +16,10 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const responseRef=useRef(null); 
   const navigate = useNavigate();
-const { i18n, t } = useTranslation();
 
-useEffect(() => {
-  if (i18n.language === "en") {
+  useEffect(() => {
     Splitting();
-  }
-}, [i18n.language]);
+  }, []);
 
   const handleCheck = async () => {
     if (!input.trim()) return;
@@ -34,27 +29,16 @@ useEffect(() => {
 
     try {
       const res = await fetch("http://localhost:5000/api/check", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    symptoms: input,
-    language: i18n.language, // 🔥 this sends the selected language to backend
-  }),
-});
-
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ symptoms: input }),
+      });
 
       const data = await res.json();
       setResponse(data);
-       setTimeout(() => {
-  if (responseRef.current) {
-    responseRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  }
-}, 100);  
+       
     } catch (error) {
       console.error("Error:", error);
       setResponse({
@@ -86,32 +70,30 @@ useEffect(() => {
 
   return (
     <div className="page-wrapper">
-   
+      
+
+      
       <div className="image">
         <img src={chabotgif} alt="" />
       </div>
       
 <h2 className="animated-heading">
-  {i18n.language === "en" ? (
-    t("title").split("").map((char, index) => (
-      <span
-        key={index}
-        className="char"
-        style={{ "--char-index": index }}
-      >
-        {char}
-      </span>
-    ))
-  ) : (
-    <span className="non-english-heading">{t("title")}</span>
-  )}
+  {"DoctorGo - Symptom Checker".split("").map((char, index) => (
+    <span
+      key={index}
+      className="char"
+      style={{ "--char-index": index }}
+    >
+      {char}
+    </span>
+  ))}
 </h2>
-
 
     
       <div className="typewriter">
-        <p>{t("instruction")}</p>
-
+        <p >
+            Enter your symptoms below to get  possible conditions & suggestions.
+          </p>
       </div>
       <div className="app-container">
         
@@ -121,23 +103,22 @@ useEffect(() => {
 
           <div className="input-group">
             <textarea
-              placeholder={t("inputPlaceholder")}
+              placeholder="e.g. fever, headache, nausea"
               value={input}
               onChange={(e) => setInput(e.target.value)}
             ></textarea>
 
             <div className="button-group">
-               <LanguageSelector />
-              <button onClick={handleCheck}>{t("checkBtn")}</button>
-              <button onClick={handleReset} className="reset">{t("resetBtn")}</button>
+              <button onClick={handleCheck}>Check My Symptoms</button>
+              <button onClick={handleReset} className="reset">Reset</button>
             </div>
           </div>
 
-          
+          {loading && <p>Analyzing symptoms...</p>}
 
           {response && (
-            <div className="response"ref={responseRef}>
-              <h2>{t("possibleConditions")}</h2>
+            <div className="response">
+              <h2>Possible Conditions:</h2>
 
               {response.conditions.map((cond, idx) => (
                 <div
@@ -149,7 +130,7 @@ useEffect(() => {
 
                   {cond.extraSymptoms && cond.extraSymptoms.length > 0 && (
                     <>
-                      <p><strong class="symptoms-heading">{t("associatedSymptoms")}</strong></p>
+                      <p><strong class="symptoms-heading">Associated Symptoms:</strong></p>
                       <ul >
                         {cond.extraSymptoms.map((sym, i) => (
                           <li className="li" key={i}>{sym}</li>
@@ -158,9 +139,9 @@ useEffect(() => {
                     </>
                   )}
 
-                  <p><strong>{t("specialist")}:</strong> {cond.specialist}</p>
+                  <p><strong>Suggested Specialist:</strong> {cond.specialist}</p>
                   <button onClick={() => handleFindDoctors(cond.specialist)}>
-  {t("findNearby", { specialist: cond.specialist })}
+  Find Nearby {cond.specialist}
 </button>
 
                   <hr />

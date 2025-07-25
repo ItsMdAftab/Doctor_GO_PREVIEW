@@ -3,7 +3,6 @@ body {
   font-family: Arial, sans-serif;
   background:linear-gradient(to right,lightgrey,#a043ff);
   color:white ;
-  overflow-y: auto;
 }
 .gmail
 {
@@ -109,12 +108,11 @@ button:hover {
   align-items: center;         
   flex-wrap: wrap;             
   font-size: 2rem;
- 
+  font-weight: bold;
   text-align: center;
   
    
-  margin-left:150px;   
-  margin-top: 0px;      
+  margin-left:150px;         
 }
 .char {
   display: inline-block;
@@ -192,7 +190,7 @@ li {
 @keyframes appear{
   from{
     opacity : 0; 
-    scale : 0.95; 
+    scale : 0.5; 
   }
   to{
     opacity : 1; 
@@ -200,11 +198,11 @@ li {
   }
 }
 .response {
-  margin-top: 0px;
+  margin-top: 30px;
   color: black ;
   animation : appear  linear;   
-    animation: appear 1s ease-in-out forwards;
-
+  animation-timeline: view();  
+  animation-range: 0% cover 40% ; 
 }
 .symptoms-heading {
   display: block;

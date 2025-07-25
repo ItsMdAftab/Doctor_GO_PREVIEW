@@ -107,7 +107,7 @@ export default function DoctorList() {
         <p>No nearby {specialist}s found.</p>
       )}
 
-    </div >
+    </div>
       
       <button className="backbutton"onClick={() => navigate("/")}>← Back to Symptom Checker</button>
     </div>
