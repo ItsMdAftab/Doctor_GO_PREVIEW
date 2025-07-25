@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:linear-gradient(to right,lightgrey,#a043ff);
+  color:white ;
+}
+.gmail
+{
+  margin-left: 10px;
+}
+.app-container {
+  text-align: center;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left:250px;
+  
+}
+
+.button-group {
+  margin: 30px 0;
+}
+.btn,
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-outline {
+  background-color: white;
+  color: #1b4332;
+  border: 2px solid #1b4332;
+}
+.btn-filled {
+  background-color: #2d6a4f;
+  color: white;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  margin-top: 15px;
+    transition: background-color 0.3s ease;
+
+}
+button:hover {
+  background-color: #0056b3;
+  
+}
+.card {
+  width: 100%;
+  max-width: 500px;
+  padding: 2em;
+  border-radius: 16px;
+  animation: appear 1.0s ease-in-out forwards;
+
+}
+
+textarea {
+  width: 70%;
+  height: 80px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  color :  black;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+
+.condition-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.animated-heading {
+   font-family: 'Georgia', 'Times New Roman', serif;
+  display: flex;
+  color:#000d00;			;
+  justify-content: center;     
+  align-items: center;         
+  flex-wrap: wrap;             
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  
+   
+  margin-left:150px;         
+}
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: char-transform 0.6s ease-out forwards;
+  animation-delay: calc(var(--char-index) * 0.05s);
+}
+
+@keyframes char-transform {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ul {
+  list-style-type: disc; /* removes the bullets */
+  padding-left: 20px;       /* removes the default left padding */
+  margin: 0;             /* optional: removes margin */
+}
+li {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #444;
+  text-align: left;      /* makes text align with bullet */
+  display: list-item; 
+   /* ensure bullet shows properly */
+}
+.typewriter
+{
+  text-align: center;
+  display :flex;
+  /*justify-content: center;*/
+
+}
+.typewriter p
+{
+  font-family: monospace;
+  font-size: 1.5rem;
+  overflow: hidden ;
+  margin-left: 150px;
+  white-space: nowrap;
+  border-right: 1px solid;
+  animation:typing 3s steps(22) forwards,
+  blink 1s step-end infinite;
+}
+@keyframes typing
+{
+  from
+  {
+    width: 0;
+
+  }
+  to{
+    width:100%
+
+  }
+}
+@keyframes blink
+{
+  50%
+  {
+    border-color:transparent;
+  }
+}
+.image
+{
+  
+  height: 50px;
+  width: 100%;
+  margin-left: 70px;
+
+}
+@keyframes appear{
+  from{
+    opacity : 0; 
+    scale : 0.5; 
+  }
+  to{
+    opacity : 1; 
+    scale : 1; 
+  }
+}
+.response {
+  margin-top: 30px;
+  color: black ;
+  animation : appear  linear;   
+  animation-timeline: view();  
+  animation-range: 0% cover 40% ; 
+}
+.symptoms-heading {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+    text-align: left; /* Make only this section left-aligned */
+
+}
