@@ -1,6 +1,3 @@
-Sure! Here's a professional and clear `README.md` template for your **DoctorGo** application that you can paste directly into your GitHub repo:
-
----
 
 ```markdown
 # 🩺 DoctorGo – AI-powered Rural Health Assistant
@@ -8,6 +5,7 @@ Sure! Here's a professional and clear `README.md` template for your **DoctorGo**
 DoctorGo is an intelligent, multilingual web application designed to assist people—especially in rural areas—with preliminary health diagnostics. It allows users to input symptoms in their native language, translates the input, and provides likely conditions and recommended specialists using a rule-based AI model.
 
 ---
+![Homepage Preview](https://github.com/ItsMdAftab/Doctor_GO_PREVIEW/raw/main/assets/home.png)
 
 
 ## 🚀 Features
