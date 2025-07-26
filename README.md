@@ -8,7 +8,8 @@ DoctorGo is an intelligent, multilingual web application designed to assist peop
 
 ## 🏠 Homepage Preview
 
-![Homepage Preview](https://github.com/ItsMdAftab/Doctor_GO_PREVIEW/raw/main/assets/home.png)
+![Homepage Preview](assets/home.png)
+
 
 
 ## 🚀 Features
