@@ -5,6 +5,9 @@
 DoctorGo is an intelligent, multilingual web application designed to assist people—especially in rural areas—with preliminary health diagnostics. It allows users to input symptoms in their native language, translates the input, and provides likely conditions and recommended specialists using a rule-based AI model.
 
 ---
+
+## 🏠 Homepage Preview
+
 ![Homepage Preview](https://github.com/ItsMdAftab/Doctor_GO_PREVIEW/raw/main/assets/home.png)
 
 
