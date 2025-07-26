@@ -8,6 +8,8 @@ Sure! Here's a professional and clear `README.md` template for your **DoctorGo**
 DoctorGo is an intelligent, multilingual web application designed to assist people—especially in rural areas—with preliminary health diagnostics. It allows users to input symptoms in their native language, translates the input, and provides likely conditions and recommended specialists using a rule-based AI model.
 
 ---
+![Homepage](./assets/doctor_go_frontend.png)
+
 
 ## 🚀 Features
 
