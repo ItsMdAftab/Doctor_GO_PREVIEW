@@ -20,7 +20,7 @@ DoctorGo is an intelligent, multilingual web application designed to assist peop
 - 🧠 **Custom Rule-based Prediction Engine**
 
 ---
-![Homepage](./assets/home.png)
+![Homepage](https://github.com/itsMdAftab/Doctor_GO_PREVIEW/raw/main/assets/home.png)
 
 ## 📁 Project Structure
 
